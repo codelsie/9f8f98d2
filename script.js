@@ -57,10 +57,10 @@ class PageManager {
         let container = document.createElement('div');
         this.fragment.postBody.insertBefore(container, this.fragment.postBody.firstChild);
         let banners = this.adManager.getAsElements(this.adManager.getBanner465x60());
-        console.log(banners)
-        for (let el of banners.children) {
-            container.append(el);
-        }
+        console.log(banners, banners.children)
+        // for (let el of banners.children) {
+        //     container.append(el);
+        // }
     }
 }
 
