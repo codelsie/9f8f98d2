@@ -36,8 +36,7 @@ class AdManager
     getAsElements(script) {
         let container = document.createElement('div');
         container.innerHTML = script;
-        console.log(container)
-        return container.children;
+        return container;
     }
 }
 
@@ -56,11 +55,11 @@ class PageManager {
 
     appendToStart() {
         let container = document.createElement('div');
-        this.fragment.postBody.appendChild(container);
+        this.fragment.postBody.insertBefore(container, this.fragment.postBody.firstChild);
         let banners = this.adManager.getAsElements(this.adManager.getBanner465x60());
         console.log(banners)
-        for (let el of banners) {
-            container.insertBefore(el, container.firstChild);
+        for (let el of banners.children) {
+            container.append(el);
         }
     }
 }
