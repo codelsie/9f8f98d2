@@ -1,8 +1,8 @@
 "use strict";
 
-$(function() {
-    $("[data-slot-content]").each(function() {
-        let el = $(`[data-slot="${this.dataset.targetSlot}"]`);
-        if (el.length) el.append(this);
+(function() {
+    document.querySelectorAll("[data-slot-content]").forEach(function(content) {
+        let slot = document.querySelector(`[data-slot="${content.dataset.slotContent}"]`)
+        if (slot) slot.appendChild(content);
     });
-});
+})();
